@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cafe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Julee&display=swap');
+
+        html {
+            background-image: linear-gradient(rgba(0, 0, 0, 1),
+                    rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0)), url(background.jpg);
+            /* background-size: cover; */
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: 'Montserrat', sans-serif;
+            height: 100%;
+            background-color: black;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            background-image: url(background.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .company-logo {
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+
+        .company-logo a img {
+            width: 7rem;
+            filter: drop-shadow(0px 0px 2px rgb(197, 188, 63));
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+
+        .nav-links {
+            position: absolute;
+            top: 0;
+            right: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .horizontal-links {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            padding: 10px;
+            gap: 3rem;
+        }
+
+        .horizontal-links li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .frontpage {
+            font-family: 'Allura', cursive;
+            color: white;
+            text-align: center;
+            position: absolute;
+            top: 40%;
+            right: 30%;
+        }
+
+        .frontpage p {
+            font-size: 2.5rem;
+            font-weight: bold;
+            position: relative;
+            left: 10%;
+        }
+
+        .name {
+            color: goldenrod;
+            font-size: 3.5rem;
+            position: relative;
+            right: -10%;
+        }
+
+        .button {
+            position: relative;
+            background-color: transparent;
+            color: white;
+            font-size: 2rem;
+            border: 3px goldenrod solid;
+            border-radius: 29px;
+            width: 17vw;
+            height: 9vh;
+            left: 10%;
+            cursor: pointer;
+        }
+
+        .btn {
+            cursor: pointer;
+            margin: 1rem;
+            background-color: transparent;
+            color: white;
+            font-size: 2rem;
+            border: 3px goldenrod solid;
+            border-radius: 29px;
+            width: 17vw;
+            height: 9vh;
+        }
+
+        .aboutus {
+            width: 100%;
+            background-color: black;
+            position: relative;
+            top: 100vh;
+            right: 0;
+            left: 0;
+            display: flex;
+            gap: 2%;
+            margin-left: .5rem;
+        }
+
+        .left {
+            top: 10vh;
+            width: 60%;
+            font-size: 1.2rem;
+            color: rgb(142, 136, 122);
+            text-shadow: 0 0 1px white;
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        .p {
+            font-size: 2.6rem;
+        }
+
+        .right {
+            flex-shrink: 0;
+            margin: 2rem;
+            position: relative;
+            width: 40%;
+            overflow: hidden;
+        }
+
+        .right img {
+            flex-shrink: 0;
+            position: relative;
+            top: 6rem;
+            width: 100%;
+            border-radius: 15%;
+            height: auto;
+            transition: opacity 0.5s ease-in-out;
+            position: absolute;
+        }
+
+
+        .container {
+            text-align: center;
+            position: absolute;
+            top: 200vh;
+        }
+
+        .best {
+            margin-left: 1.9rem;
+        }
+
+        .kk {
+            font-size: 2.6rem;
+            color: rgb(142, 136, 122);
+        }
+
+        .container2 {
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .boxes {
+            color: white;
+            height: 70vh;
+            width: 42vh;
+            background-color: transparent;
+            transition: all .3s ease-in-out;
+        }
+
+        .boxes:hover {
+            background-color: rgb(24, 0, 0);
+            transform: scale(1.05);
+            box-shadow: rgb(142, 136, 122) 0px 3px 7px 0px;
+        }
+
+        .boxes img {
+            margin: .5rem;
+            width: 20vw;
+        }
+
+        .content {
+            font-size: 1rem;
+            color: rgb(142, 136, 122);
+        }
+
+        .question {
+            position: absolute;
+            top: 125rem;
+            left: 30%;
+            width: 44vw;
+            color: rgb(142, 136, 122);
+        }
+
+        .main-question {
+            text-align: center;
+            font-size: 2.6rem;
+        }
+
+        .details {
+            margin: 1rem;
+        }
+
+        .details summary {
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .details p {
+            font-style: italic;
+            display: none;
+        }
+
+        .details.active p {
+            display: block;
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: rgb(142, 136, 122);
+            position: relative;
+            top: 270vh;
+            text-align: center;
+        }
+
+        .contactus {
+            gap: 1rem;
+            display: flex;
+            flex-direction: column;
+            margin-left: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            margin-right: 0.5rem;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-item p {
+            margin: 0;
+        }
+
+        footer {
+            background-color: rgb(53, 52, 52);
+            height: 10vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 280vh;
+            width: 100%;
+        }
+
+        .footer {
+            display: flex;
+            gap: 1rem;
+        }
+
+        footer a {
+            color: white;
+            margin-left: 1rem;
+        }
+    </style>
+</head>
+<script src="https://kit.fontawesome.com/cfafb8089e.js" crossorigin="anonymous"></script>
+
+<body>
+    <section>
+        <div class="company-logo">
+            <div class="nav-links" id="nav-links">
+                <ul class="horizontal-links">
+                    <li><a class="box" href="#">HOME</a></li>
+                    <li><a class="box" href="#">ABOUT</a></li>
+                    <a href="#">
+                        <img class="logo"
+                            src="https://static.vecteezy.com/system/resources/thumbnails/023/628/609/small/coffee-shop-logo-design-png.png"
+                            alt="">
+                    </a>
+                    <li><a class="box" href="#">SHOP</a></li>
+                    <li><a class="box" href="#">CONTACT US</a></li>
+                </ul>
+                <a href="#" class=" nav-toggle hover-links" id="nav-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="frontpage">
+            <p>Indulge in Sweet Delights at Café Cake House</p>
+            <h1 class="name">The cafe cake house</h1>
+            <a href="#">
+                <input class="button btns" type="button" value="Shop now">
+            </a>
+        </div>
+    </section>
+
+    <main class="aboutus">
+        <div class="left">
+            <p class="kk">ABOUT US...</p>
+            <p>Welcome to Cafe Cake House, where indulgence meets delight! We are passionate about creating exceptional
+                culinary experiences and bringing joy to your taste buds. Our dedicated team of skilled bakers and
+                baristas
+                work tirelessly to deliver mouthwatering cakes, pastries, and aromatic coffees that leave a lasting
+                impression.
+
+                At Cafe Cake House, we believe that every bite should be a moment of pure bliss. We meticulously source
+                the
+                finest ingredients to ensure that each creation is a masterpiece of flavors and textures. From rich
+                chocolate cakes to delicate macarons, our menu offers a tempting array of treats to satisfy every sweet
+                tooth.
+
+                But it's not just about the desserts; it's about creating a warm and inviting atmosphere for you to
+                relax
+                and enjoy. Our cozy cafe provides the perfect setting to unwind, catch up with friends, or simply savor
+                a
+                quiet moment alone. We take pride in offering exceptional service, ensuring that every visit is an
+                unforgettable experience.
+
+                Whether you're celebrating a special occasion, looking for a place to work or study, or simply craving a
+                heavenly slice of cake, Cafe Cake House is your go-to destination. Join us on this delightful journey of
+                flavors and let us enchant you with our delectable creations.
+
+                Indulge. Delight. Enjoy. Welcome to Cafe Cake House!</p>
+            <input class="btn" type="button" value="Read more">
+        </div>
+        <div class="right">
+            <a href="#">
+                <img id="slideshow" src="image 0.jpg" alt="slideshow images">
+            </a>
+        </div>
+    </main>
+
+    <section class="best">
+        <div class="container">
+            <p class="kk">OUR BESTSELLERS</p>
+            <div class="container2">
+                <div class="boxes" id="box 1">
+                    <img src="cheese cake.jpg" alt="cheese cake">
+                    <h3>Cheese cake</h3>
+                    <p class="content">Indulge in our Bestseller, the Heavenly Cheese Cake, crafted with love and
+                        precision. Experience the perfect combination of velvety cream cheese filling and a buttery
+                        graham cracker crust for a truly heavenly dessert delight.</p>
+                </div>
+                <div class="boxes" id="box 2">
+                    <img src="danish cake.jpg" alt="danish cake">
+                    <h3>Dansih Cake</h3>
+                    <p class="content">Indulge in our Bestseller, the Danish Cake, a heavenly treat of moist sponge cake
+                        layered with fruit preserves and a sweet icing drizzle. Experience the perfect balance of
+                        flavors, creating an exquisite dessert that will leave you wanting more.</p>
+                </div>
+                <div class="boxes" id="box 3">
+                    <img src="peanut cake.jpg" alt="peanut cake">
+                    <h3>Peanut cake</h3>
+                    <p class="content">Savor our beloved Bestseller, the Peanut Cake, a delightful fusion of rich, nutty
+                        flavors and moist cake layers. Experience the heavenly combination of creamy peanut butter
+                        frosting and a sprinkle of crushed peanuts for a truly unforgettable dessert.</p>
+                </div>
+                <div class="boxes" id="box 4">
+                    <img src="Pasta With Mushrooms and Herbs.jpg" alt="pasta with mushroom">
+                    <h3>Pasta With Mushrooms and Herbs</h3>
+                    <p class="content">Savor our Bestseller, Mushroom Pasta, a delightful harmony of al dente pasta and
+                        velvety mushroom sauce. Experience the divine flavors of earthy mushrooms, aromatic herbs, and
+                        savory notes, taking your taste buds on an unforgettable journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="question">
+        <p class="oo kk">FREQUENTLY ASKED QUESTIONS</p>
+        <details class="details">
+            <summary>What types of cakes do you offer?</summary>
+            <p>We offer a wide variety of cakes, including classic flavors like chocolate and vanilla, as well as
+                specialty cakes like red velvet and carrot cake. We also have seasonal options and can accommodate
+                custom cake requests.</p>
+        </details>
+
+        <details class="details">
+            <summary>Do you provide gluten-free or vegan options?</summary>
+            <p>Yes, we understand the importance of catering to dietary preferences and restrictions. We offer delicious
+                gluten-free and vegan cake options that maintain the same great taste and quality as our regular cakes.
+            </p>
+        </details>
+
+        <details class="details">
+            <summary>Can I place a custom cake order for a special occasion?</summary>
+            <p>Absolutely! We love creating custom cakes for special occasions. Whether it's a birthday, wedding, or any
+                other celebration, our talented bakers can bring your vision to life. Just let us know your
+                requirements, and we'll work together to create a memorable cake.</p>
+        </details>
+
+        <details class="details">
+            <summary>What coffee specialties do you serve?</summary>
+            <p>Our coffee menu features a range of specialty options to satisfy every coffee lover's cravings. From
+                classic espresso-based drinks like cappuccinos and lattes to indulgent flavored coffees and refreshing
+                iced beverages, we have something for everyone.</p>
+        </details>
+
+        <details class="details">
+            <summary>Do you offer delivery or takeout services?</summary>
+            <p>Yes, we offer convenient delivery and takeout services for your convenience. You can enjoy our delicious
+                cakes and coffee from the comfort of your own home or office. Simply place your order online or give us
+                a call, and we'll take care of the rest.</p>
+        </details>
+    </div>
+
+    <div class="contact">
+        <p class="kk">CONTACT US</p>
+        <div class="contactus">
+            <a href="#">
+                <i class="fa-solid fa-envelope fa-bounce fa-xl"></i>
+            </a>
+            <p>Cakecafeshop@gmail.com</p>
+
+            <a href="#">
+                <i class="fa-sharp fa-solid fa-phone fa-bounce fa-xl"></i>
+            </a>
+            <p>+91 6048941258</p>
+
+            <a href="#">
+                <i class="fa-solid fa-location-dot fa-bounce fa-xl"></i>
+            </a>
+            <p>Andheri (East), Near Andheri railway station, Mumbai, MH</p>
+        </div>
+    </div>
+
+    <footer>
+        <a href="#">&copy 2023 coffee cake shop. All rights reserved.</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms & condition</a>
+        <a href="#"><em>FSSAI no: A541dFs5455</em></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </footer>
+
+</body>
+
+</html>
